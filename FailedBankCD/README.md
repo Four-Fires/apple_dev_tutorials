@@ -1,0 +1,1 @@
+this is a Core Data tutorial, see: http://www.raywenderlich.com/934/core-data-tutorial-for-ios-getting-started
