@@ -26,6 +26,7 @@
 		340C29CA185E44B40096203C /* FBCDMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 340C29C9185E44B40096203C /* FBCDMasterViewController.m */; };
 		340C29CD185E7A420096203C /* FailedBankInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 340C29CC185E7A420096203C /* FailedBankInfo.m */; };
 		340C29D0185E7A430096203C /* FailedBankDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 340C29CF185E7A430096203C /* FailedBankDetails.m */; };
+		340C29FE185EA8FA0096203C /* CoreDataTutorial2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 340C29FD185EA8FA0096203C /* CoreDataTutorial2.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		340C29CC185E7A420096203C /* FailedBankInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailedBankInfo.m; sourceTree = "<group>"; };
 		340C29CE185E7A430096203C /* FailedBankDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FailedBankDetails.h; sourceTree = "<group>"; };
 		340C29CF185E7A430096203C /* FailedBankDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FailedBankDetails.m; sourceTree = "<group>"; };
+		340C29FD185EA8FA0096203C /* CoreDataTutorial2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoreDataTutorial2.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		340C2992185E27D10096203C /* FailedBankCD */ = {
 			isa = PBXGroup;
 			children = (
+				340C29FD185EA8FA0096203C /* CoreDataTutorial2.sqlite */,
 				340C299B185E27D10096203C /* FBCDAppDelegate.h */,
 				340C299C185E27D10096203C /* FBCDAppDelegate.m */,
 				340C29C8185E44B40096203C /* FBCDMasterViewController.h */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				340C29AB185E27D10096203C /* Images.xcassets in Resources */,
+				340C29FE185EA8FA0096203C /* CoreDataTutorial2.sqlite in Resources */,
 				340C2997185E27D10096203C /* InfoPlist.strings in Resources */,
 				340C29A0185E27D10096203C /* Main.storyboard in Resources */,
 			);
@@ -483,6 +487,7 @@
 				340C29C4185E27D10096203C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		340C29C5185E27D10096203C /* Build configuration list for PBXNativeTarget "FailedBankCDTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +496,7 @@
 				340C29C7185E27D10096203C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
