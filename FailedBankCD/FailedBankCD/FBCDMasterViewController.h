@@ -2,15 +2,14 @@
 //  FBCDMasterViewController.h
 //  FailedBankCD
 //
-//  Created by matthew on 2013-12-15.
-//  Copyright (c) 2013 matthew. All rights reserved.
+//  Created by Adam Burkepile on 3/23/12.
+//  Copyright (c) 2012 Adam Burkepile. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FBCDMasterViewController : UITableViewController
+@interface FBCDMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic, strong) NSArray *failedBankInfos;
-
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @end
