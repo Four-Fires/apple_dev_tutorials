@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MasterViewController">
             <connections>
-                <outlet property="bugArrayController" destination="PD6-df-az9" id="cGd-b7-Oir"/>
+                <outlet property="bugArrayController" destination="PD6-df-az9" id="R57-VP-CQS"/>
                 <outlet property="bugRating" destination="46" id="52"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
@@ -135,7 +135,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="remove:" target="PD6-df-az9" id="XBN-2O-b62"/>
+                        <action selector="remove:" target="PD6-df-az9" id="Dwq-A1-QW2"/>
                         <binding destination="PD6-df-az9" name="enabled" keyPath="selection.@count" id="HDU-qK-wHC"/>
                     </connections>
                 </button>
@@ -171,7 +171,7 @@
                 </box>
             </subviews>
         </customView>
-        <arrayController mode="entity" entityName="Bug" automaticallyPreparesContent="YES" id="PD6-df-az9" userLabel="BugArrayController">
+        <arrayController mode="entity" entityName="Bug" automaticallyPreparesContent="YES" id="PD6-df-az9" userLabel="BugArrayController" customClass="BugArrayController">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="siR-DI-BQG"/>
             </connections>

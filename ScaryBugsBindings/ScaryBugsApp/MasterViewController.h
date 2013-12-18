@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BugArrayController.h"
 
 @interface MasterViewController : NSViewController
 
 @property (strong) NSMutableArray *bugs;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) IBOutlet NSArrayController *bugArrayController;
+@property (strong, nonatomic) IBOutlet BugArrayController *bugArrayController;
 @property (strong, nonatomic) NSURL *pathToAppSupport;
 
 @end
