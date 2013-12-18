@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342D6DA5186091AE00486C8D /* ScaryBugsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 342D6DA3186091AE00486C8D /* ScaryBugsApp.xcdatamodeld */; };
+		342D6DA81860931D00486C8D /* Bug.m in Sources */ = {isa = PBXBuildFile; fileRef = 342D6DA71860931D00486C8D /* Bug.m */; };
+		342D6DAB186102C300486C8D /* DetailImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 342D6DAA186102C300486C8D /* DetailImageTransformer.m */; };
+		342D6DAE186103F900486C8D /* TableImageCellTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 342D6DAD186103F900486C8D /* TableImageCellTransformer.m */; };
 		35364A6415D6F4F100A6A72E /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 35364A6115D6F4F100A6A72E /* EDStarRating.m */; };
 		35364A6515D6F4F100A6A72E /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 35364A6315D6F4F100A6A72E /* NSImage+Extras.m */; };
 		35364A6915D6F4F900A6A72E /* shockedface2_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 35364A6615D6F4F900A6A72E /* shockedface2_empty.png */; };
@@ -35,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		342D6DA4186091AE00486C8D /* ScaryBugsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScaryBugsApp.xcdatamodel; sourceTree = "<group>"; };
+		342D6DA61860931D00486C8D /* Bug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bug.h; sourceTree = "<group>"; };
+		342D6DA71860931D00486C8D /* Bug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bug.m; sourceTree = "<group>"; };
+		342D6DA9186102C300486C8D /* DetailImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailImageTransformer.h; sourceTree = "<group>"; };
+		342D6DAA186102C300486C8D /* DetailImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailImageTransformer.m; sourceTree = "<group>"; };
+		342D6DAC186103F900486C8D /* TableImageCellTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableImageCellTransformer.h; sourceTree = "<group>"; };
+		342D6DAD186103F900486C8D /* TableImageCellTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableImageCellTransformer.m; sourceTree = "<group>"; };
 		35364A6015D6F4F100A6A72E /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
 		35364A6115D6F4F100A6A72E /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
 		35364A6215D6F4F100A6A72E /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
@@ -162,12 +173,19 @@
 		35BB3F9015D6D65D0079230E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				342D6DA3186091AE00486C8D /* ScaryBugsApp.xcdatamodeld */,
+				342D6DA61860931D00486C8D /* Bug.h */,
+				342D6DA71860931D00486C8D /* Bug.m */,
 				35BB3F8015D6CF310079230E /* AppDelegate.h */,
 				35BB3F8115D6CF310079230E /* AppDelegate.m */,
 				35BB3F8315D6CF310079230E /* MainMenu.xib */,
 				35BB3F8B15D6D2560079230E /* MasterViewController.h */,
 				35BB3F8C15D6D2560079230E /* MasterViewController.m */,
 				35BB3F8D15D6D2560079230E /* MasterViewController.xib */,
+				342D6DA9186102C300486C8D /* DetailImageTransformer.h */,
+				342D6DAA186102C300486C8D /* DetailImageTransformer.m */,
+				342D6DAC186103F900486C8D /* TableImageCellTransformer.h */,
+				342D6DAD186103F900486C8D /* TableImageCellTransformer.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -283,8 +301,12 @@
 				35BB3F8215D6CF310079230E /* AppDelegate.m in Sources */,
 				35BB3F8E15D6D2560079230E /* MasterViewController.m in Sources */,
 				35BB3F9415D6D8FC0079230E /* ScaryBugData.m in Sources */,
+				342D6DAB186102C300486C8D /* DetailImageTransformer.m in Sources */,
 				35BB3F9715D6D9E30079230E /* ScaryBugDoc.m in Sources */,
+				342D6DA5186091AE00486C8D /* ScaryBugsApp.xcdatamodeld in Sources */,
+				342D6DA81860931D00486C8D /* Bug.m in Sources */,
 				35364A6415D6F4F100A6A72E /* EDStarRating.m in Sources */,
+				342D6DAE186103F900486C8D /* TableImageCellTransformer.m in Sources */,
 				35364A6515D6F4F100A6A72E /* NSImage+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,13 +393,14 @@
 		35BB3F8915D6CF310079230E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScaryBugsApp/ScaryBugsApp-Prefix.pch";
 				INFOPLIST_FILE = "ScaryBugsApp/ScaryBugsApp-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -385,13 +408,14 @@
 		35BB3F8A15D6CF310079230E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ScaryBugsApp/ScaryBugsApp-Prefix.pch";
 				INFOPLIST_FILE = "ScaryBugsApp/ScaryBugsApp-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -418,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		342D6DA3186091AE00486C8D /* ScaryBugsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				342D6DA4186091AE00486C8D /* ScaryBugsApp.xcdatamodel */,
+			);
+			currentVersion = 342D6DA4186091AE00486C8D /* ScaryBugsApp.xcdatamodel */;
+			path = ScaryBugsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 35BB3F6115D6CF310079230E /* Project object */;
 }

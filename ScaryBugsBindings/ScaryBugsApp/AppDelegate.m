@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #include "MasterViewController.h"
 #import "ScaryBugDoc.h"
+#import "Bug.h"
 
 @interface  AppDelegate()
 @property (nonatomic,strong) IBOutlet MasterViewController *masterViewController;
@@ -19,6 +20,32 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
+-(void)prePopulate {
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:@"sb_FirstRun"]) {
+        NSString *file = @"file://";
+        NSManagedObject *centipede = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Bug" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        [centipede setValue:[NSNumber numberWithFloat:3] forKey:@"rating"];
+        [centipede setValue:@"Centipede" forKey:@"name"];
+        [centipede setValue:[file stringByAppendingString:[[NSBundle mainBundle] pathForImageResource:@"centipede.jpg"]] forKey:@"imagePath"];
+        
+        NSManagedObject *potatoBug = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Bug" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        [potatoBug setValue:[NSNumber numberWithFloat:4] forKey:@"rating"];
+        [potatoBug setValue:@"Potato Bug" forKey:@"name"];
+        [potatoBug setValue:[file stringByAppendingString:[[NSBundle mainBundle] pathForImageResource:@"potatoBug.jpg"]] forKey:@"imagePath"];
+        
+        NSManagedObject *wolfSpider = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Bug" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        [wolfSpider setValue:[NSNumber numberWithFloat:5] forKey:@"rating"];
+        [wolfSpider setValue:@"Wolf Spider" forKey:@"name"];
+        [wolfSpider setValue:[file stringByAppendingString:[[NSBundle mainBundle] pathForImageResource:@"wolfSpider.jpg"]] forKey:@"imagePath"];
+        
+        NSManagedObject *ladyBug = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Bug" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:self.managedObjectContext];
+        [ladyBug setValue:[NSNumber numberWithFloat:1] forKey:@"rating"];
+        [ladyBug setValue:@"Lady Bug" forKey:@"name"];
+        [ladyBug setValue:[file stringByAppendingString:[[NSBundle mainBundle] pathForImageResource:@"ladybug.jpg"]] forKey:@"imagePath"];
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:@"sb_FirstRun"];
+    }
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // 1. Create the master View Controller
@@ -27,6 +54,11 @@
     // 2. Add the view controller to the Window's content view
     [self.window.contentView addSubview:self.masterViewController.view];
     self.masterViewController.view.frame = ((NSView*)self.window.contentView).bounds;
+    
+    self.masterViewController.managedObjectContext = self.managedObjectContext;
+    
+    self.masterViewController.pathToAppSupport = [self applicationFilesDirectory];
+    [self prePopulate];
 }
 
 
@@ -143,6 +175,20 @@
     
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
+    }
+}
+
+-(IBAction)resetBugs:(id)sender {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Bug"];
+    NSError *error;
+    NSArray *allBugs = [self.managedObjectContext executeFetchRequest:request error:&error];
+    for (Bug *bug in allBugs) {
+        [self.managedObjectContext deleteObject:bug];
+    }
+    if (!error) {
+        [self saveAction:self];
+        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"sb_FirstRun"];
+        [self prePopulate];
     }
 }
 
