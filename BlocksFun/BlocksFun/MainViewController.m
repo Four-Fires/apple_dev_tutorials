@@ -268,23 +268,28 @@
                 break;
             
             case 4:
+#warning the reuslt for this test may be more visible in release build, even sometimes it won't crash the result is undefined. Make sure the file exsits so error is not initialized in doNotDoThis
                 testVC = [[TestViewController alloc] init];
                 testVC.doThis = ^{
                     NSError *error = nil;
                     [[NSFileManager defaultManager] attributesOfItemAtPath:@"/Users/matthew/Desktop/mitsuihisashi.jpg" error:&error];
+                    NSString *string = nil;
                     double delayInSeconds = 2.0;
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                         NSLog(@"%@", error);
+                        NSLog(@"%@", string);
                     });
                 };
                 testVC.doNotDoThis = ^ {
                     NSError *error;
                     [[NSFileManager defaultManager] attributesOfItemAtPath:@"/Users/matthew/Desktop/mitsuihisashi.jpg" error:&error];
+                    NSString *string;
                     double delayInSeconds = 2.0;
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                         NSLog(@"%@", error);
+                        NSLog(@"%@", string);
                     });
                 };
                 [self.navigationController pushViewController:testVC animated:YES];
