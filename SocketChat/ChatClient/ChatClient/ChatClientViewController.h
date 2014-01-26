@@ -12,6 +12,7 @@
 
 - (IBAction)onJoin:(id)sender;
 - (IBAction)onSend:(id)sender;
+- (IBAction)onConnectServer:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UITextField *inputNameField;
 @property (retain, nonatomic) IBOutlet UIView *joinView;

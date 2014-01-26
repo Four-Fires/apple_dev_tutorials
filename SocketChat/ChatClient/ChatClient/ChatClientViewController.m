@@ -123,6 +123,11 @@
     }
 }
 
+- (IBAction)onConnectServer:(id)sender
+{
+    [self _connectSocket];
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if (_outputStream && string!=nil && ![string isEqualToString:@""])
@@ -139,9 +144,11 @@
 - (void)_handleStreamError
 {
     [_outputStream close];
+    [_outputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [_outputStream release];
     _outputStream = nil;
     [_inputStream close];
+    [_inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [_inputStream release];
     _inputStream = nil;
     _canSend = NO;
@@ -212,6 +219,7 @@
             break;
         case NSStreamEventEndEncountered:
             NSLog(@"NSStreamEventEndEncountered");
+            [self _handleStreamError];
             break;
         default:
             break;
