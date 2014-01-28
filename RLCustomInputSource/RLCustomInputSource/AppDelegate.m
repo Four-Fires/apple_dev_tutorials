@@ -67,7 +67,8 @@
     }
     while (!stopWorkerFlag);
     
-    [source invalidate];
+    // RunLoopSource object won't leak even without following line
+//    [source invalidate];
     
     [pool release];
 
